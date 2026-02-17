@@ -49,6 +49,7 @@ export default function Technologies() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
+      aria-label={t('sectionLabel')}
     >
       <motion.h1
         initial={{ opacity: 0, y: 20, backgroundPosition: '0% 50%' }}
@@ -73,9 +74,11 @@ export default function Technologies() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
+        role="list"
+        aria-label="Technology stack"
       >
         {icons.map((icon, index) => (
-          <motion.div key={index} variants={iconVariants}>
+          <motion.div key={index} variants={iconVariants} role="listitem">
             <Image src={icon.src} alt={icon.alt} width={50} height={50} />
           </motion.div>
         ))}

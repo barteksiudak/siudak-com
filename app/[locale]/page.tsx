@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <Bio />
         <Founder />

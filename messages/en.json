@@ -9,14 +9,17 @@
     "twitterDescription": "Senior JavaScript Developer specializing in ReactJS, NextJS, ReactNative, NodeJS, and MongoDB."
   },
   "header": {
-    "title": "Siudak.com"
+    "title": "Siudak.com",
+    "skipToContent": "Skip to main content"
   },
   "home": {
     "greeting": "Hello World"
   },
   "language": {
     "en": "English",
-    "pl": "Polish"
+    "pl": "Polish",
+    "switchTo": "Switch to {language}",
+    "currentLanguage": "Current language: {language}"
   },
   "notFound": {
     "title": "404 - Page Not Found",
@@ -25,15 +28,20 @@
   },
   "hero": {
     "roles": "System Architect | Senior Software Developer | Entrepreneur",
-    "description": "I combine over 20 years of IT experience with a business vision. I build scalable web solutions for global brands, startups, and non-profit organizations. I am passionate about system architecture, software development, and entrepreneurship."
+    "description": "I combine over 20 years of IT experience with a business vision. I build scalable web solutions for global brands, startups, and non-profit organizations. I am passionate about system architecture, software development, and entrepreneurship.",
+    "sectionLabel": "Introduction"
   },
   "bio": {
     "title": "Experience and competence",
-    "description": "I am a software architect and developer specializing in modern web technologies. My main technology stack is the React ecosystem and TypeScript (mainly Next.js). I have over 20 years of experience in the industry, gained in both dynamic startup environments and large corporate structures. I have worked on projects for giants such as Coca-Cola, Disney, Vodafone, and General Electric. This unique combination allows me to deliver high-quality code while understanding the broader business context and market needs."
+    "description": "I am a software architect and developer specializing in modern web technologies. My main technology stack is the React ecosystem and TypeScript (mainly Next.js). I have over 20 years of experience in the industry, gained in both dynamic startup environments and large corporate structures. I have worked on projects for giants such as Coca-Cola, Disney, Vodafone, and General Electric. This unique combination allows me to deliver high-quality code while understanding the broader business context and market needs.",
+    "sectionLabel": "Professional Experience and Competence"
   },
   "founder": {
     "title": "Founder & Architect - SelfExpo",
     "description": "I am the founder and architect of SelfExpo, an innovative B2B SaaS platform for managing autonomous showrooms.",
+    "sectionLabel": "SelfExpo Project",
+    "logoAlt": "SelfExpo - Autonomous Showroom Management Platform",
+    "externalLinkLabel": "Visit SelfExpo website (opens in a new tab)",
     "keyFunctions": [
       {
         "title": "24/7 Autonomy",
@@ -56,11 +64,13 @@
   },
   "technologies": {
     "title": "Technologies",
-    "description": "In my daily work, I rely on a proven ecosystem based on React, Next.js, and TypeScript, supported by AWS and Cloudflare infrastructure. However, my toolkit encompasses a much broader spectrum of frontend technologies - from CSS preprocessors (Sass/Less) and CSS-in-JS solutions (Styled Components, Emotion) to advanced state management (Redux, Zustand) and testing (Jest, Cypress). I choose tools pragmatically, tailoring them to the scale of the project and business requirements rather than temporary trends."
+    "description": "In my daily work, I rely on a proven ecosystem based on React, Next.js, and TypeScript, supported by AWS and Cloudflare infrastructure. However, my toolkit encompasses a much broader spectrum of frontend technologies - from CSS preprocessors (Sass/Less) and CSS-in-JS solutions (Styled Components, Emotion) to advanced state management (Redux, Zustand) and testing (Jest, Cypress). I choose tools pragmatically, tailoring them to the scale of the project and business requirements rather than temporary trends.",
+    "sectionLabel": "Technologies and Tools"
   },
   "interests": {
     "title": "Interests",
-    "description": "In my free time, I am passionate about electronics and Smart Home systems. I amateurly design and implement home automation solutions, constantly keeping up with the latest trends in the world of IoT and hardware. This hobby allows me to better understand the interface between software and hardware, which I utilize, among other things, in the development of SelfExpo."
+    "description": "In my free time, I am passionate about electronics and Smart Home systems. I amateurly design and implement home automation solutions, constantly keeping up with the latest trends in the world of IoT and hardware. This hobby allows me to better understand the interface between software and hardware, which I utilize, among other things, in the development of SelfExpo.",
+    "sectionLabel": "Personal Interests"
   },
   "footer": {
     "allRightsReserved": "All rights reserved",

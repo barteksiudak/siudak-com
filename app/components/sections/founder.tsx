@@ -39,6 +39,7 @@ export default function Founder() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
+      aria-label={t('sectionLabel')}
     >
       <motion.h1
         initial={{ opacity: 0, scale: 0.5, rotate: -5 }}
@@ -65,7 +66,7 @@ export default function Founder() {
         >
           <Image
             src="/images/selfexpo-logo.svg"
-            alt="SelfExpo"
+            alt={t('logoAlt')}
             width={300}
             height={300}
           />
@@ -94,6 +95,7 @@ export default function Founder() {
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://selfexpo.eu"
+                  aria-label={t('externalLinkLabel')}
                 >
                   {chunks}
                 </a>

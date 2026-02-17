@@ -11,7 +11,7 @@ export default function Hero() {
   const tFooter = useTranslations('footer');
 
   return (
-    <section className={styleCommon.container}>
+    <section className={styleCommon.container} aria-label={t('sectionLabel')}>
       <motion.h1
         initial={{ opacity: 0, y: 20, scale: 0.9 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -36,13 +36,15 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
+        aria-label="Connect on LinkedIn (opens in a new tab)"
       >
         <span>{tFooter('contactLinkedIn')}</span>
         <Image
           src="/images/linkedin.svg"
-          alt="LinkedIn"
+          alt=""
           width={32}
           height={32}
+          aria-hidden="true"
         />
       </motion.a>
       <motion.h3

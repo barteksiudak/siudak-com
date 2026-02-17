@@ -10,6 +10,9 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
+      <a href="#main-content" className={styles.skipLink}>
+        {t('skipToContent')}
+      </a>
       <LanguageSwitcher currentLocale={locale} />
     </header>
   );
