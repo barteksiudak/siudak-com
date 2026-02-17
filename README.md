@@ -1,55 +1,62 @@
 # siudak.com
 
-Projekt Next.js skonfigurowany do generowania statycznych stron (SSG).
+Next.js project configured for Static Site Generation (SSG).
 
-## Rozpoczęcie pracy
+## Getting Started
 
-### Instalacja zależności
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### Uruchomienie serwera deweloperskiego
+### Run Development Server
 
 ```bash
 npm run dev
 ```
 
-Otwórz [http://localhost:3000](http://localhost:3000) w przeglądarce.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Budowanie do produkcji (SSG)
+### Build for Production (SSG)
 
 ```bash
 npm run build
 ```
 
-Strona zostanie wyeksportowana jako statyczne pliki HTML do folderu `out/`.
+The site will be exported as static HTML files to the `out/` folder.
 
-### Konfiguracja SSG
+### SSG Configuration
 
-Projekt jest skonfigurowany do generowania statycznych stron poprzez:
+The project is configured for static site generation through:
 
-- `output: 'export'` w [next.config.js](next.config.js)
-- Wszystkie strony są renderowane podczas budowania
-- Wynikowe pliki statyczne znajdują się w folderze `out/`
+- `output: 'export'` in [next.config.js](next.config.js)
+- All pages are rendered during build time
+- Static files are output to the `out/` folder
 
-## Struktura projektu
+## Project Structure
 
 ```
 .
 ├── app/
-│   ├── layout.tsx      # Główny layout aplikacji
-│   ├── page.tsx        # Strona główna (Hello World)
-│   └── globals.css     # Globalne style CSS
-├── next.config.js      # Konfiguracja Next.js (SSG)
-├── tsconfig.json       # Konfiguracja TypeScript
-└── package.json        # Zależności projektu
+│   ├── layout.tsx      # Main application layout
+│   ├── page.tsx        # Home page (Hello World)
+│   ├── globals.css     # Global CSS styles
+│   └── styles/
+│       └── variables.css  # Design system variables
+├── next.config.js      # Next.js configuration (SSG)
+├── tsconfig.json       # TypeScript configuration
+└── package.json        # Project dependencies
 ```
 
-## Technologie
+## Technologies
 
 - Next.js 14
 - React 18
 - TypeScript
 - SSG (Static Site Generation)
+- Prettier (code formatting)
+
+## Design System
+
+All variables are defined in [app/styles/variables.css](app/styles/variables.css) in the `:root` block.
