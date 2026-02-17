@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    # Uncomment the following for development mode with hot-reload
+    # volumes:
+    #   - .:/app
+    #   - /app/node_modules
+    #   - /app/.next
+    # command: yarn dev
+
+  # Development service - comment out the 'web' service above and use this instead
+  # web-dev:
+  #   image: node:20-alpine
+  #   working_dir: /app
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - .:/app
+  #     - /app/node_modules
+  #     - /app/.next
+  #   environment:
+  #     - NODE_ENV=development
+  #   command: sh -c "corepack enable && corepack prepare yarn@1.22.22 --activate && yarn install && yarn dev"
+  #   restart: unless-stopped
