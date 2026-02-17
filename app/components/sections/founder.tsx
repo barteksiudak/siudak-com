@@ -78,7 +78,10 @@ export default function Founder() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.p variants={itemVariants}>{t('description')}</motion.p>
+          <motion.p variants={itemVariants}>
+            <strong>{t('description')}</strong>
+          </motion.p>
+          <br />
           <motion.ul variants={containerVariants}>
             {keyFunctionsArray.map((_: any, index: number) => (
               <motion.li key={index} variants={itemVariants}>

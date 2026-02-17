@@ -13,18 +13,13 @@ export default function Hero() {
   return (
     <section className={styleCommon.container} aria-label={t('sectionLabel')}>
       <motion.h1
-        initial={{ opacity: 0, y: 20, scale: 0.9 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{
-          duration: 0.8,
-          ease: [0.6, -0.05, 0.01, 0.99],
-          scale: {
-            type: 'spring' as const,
-            stiffness: 200,
-            damping: 15,
-          },
+          duration: 0.6,
+          ease: 'easeOut',
         }}
-        whileHover={{ scale: 1.02 }}
+        style={{ willChange: 'transform, opacity' }}
       >
         Bartosz Siudak
       </motion.h1>
@@ -35,8 +30,9 @@ export default function Hero() {
         className={styleCommon.linkedinLink}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
+        transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
         aria-label="Connect on LinkedIn (opens in a new tab)"
+        style={{ willChange: 'transform, opacity' }}
       >
         <span>{tFooter('contactLinkedIn')}</span>
         <Image
@@ -48,10 +44,10 @@ export default function Hero() {
         />
       </motion.a>
       <motion.h3
-        initial={{ opacity: 0, x: -20, letterSpacing: '0.5em' }}
-        animate={{ opacity: 1, x: 0, letterSpacing: 'normal' }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        whileHover={{ letterSpacing: '0.05em' }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
+        style={{ willChange: 'transform, opacity' }}
       >
         {t('roles')}
       </motion.h3>
@@ -59,15 +55,17 @@ export default function Hero() {
         className={styleCommon.description}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
+        transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
+        style={{ willChange: 'transform, opacity' }}
       >
         {t('description')}
       </motion.p>
       <motion.div
         className={style.heroImageContainer}
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
+        style={{ willChange: 'opacity' }}
       >
         <Image
           src="/images/hero.jpg"
@@ -75,6 +73,8 @@ export default function Hero() {
           className={style.heroImage}
           width={1920}
           height={1080}
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1200px"
+          quality={85}
           priority
         />
       </motion.div>

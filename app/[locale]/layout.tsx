@@ -2,8 +2,14 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n/routing';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import '../globals.css';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export async function generateMetadata({
   params: { locale },
@@ -19,11 +25,6 @@ export async function generateMetadata({
     authors: [{ name: 'Bartosz Siudak' }],
     creator: 'Bartosz Siudak',
     publisher: 'Bartosz Siudak',
-    viewport: {
-      width: 'device-width',
-      initialScale: 1,
-      maximumScale: 5,
-    },
     openGraph: {
       type: 'website',
       locale: locale === 'pl' ? 'pl_PL' : 'en_US',
@@ -76,11 +77,8 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-        <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=5"
-        />
+        <link rel="preconnect" href="https://www.linkedin.com" />
+        <link rel="dns-prefetch" href="https://www.linkedin.com" />
       </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
