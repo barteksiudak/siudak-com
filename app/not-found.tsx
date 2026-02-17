@@ -2,20 +2,6 @@ import { cookies } from 'next/headers';
 import styles from './not-found.module.css';
 import './globals.css';
 
-// Translation messages
-const messages = {
-  en: {
-    title: '404 - Page Not Found',
-    message: 'Sorry, the page you are looking for does not exist.',
-    backHome: 'Go back home',
-  },
-  pl: {
-    title: '404 - Strona nie znaleziona',
-    message: 'Przepraszamy, strona której szukasz nie istnieje.',
-    backHome: 'Wróć do strony głównej',
-  },
-};
-
 export default async function GlobalNotFound() {
   const cookieStore = await cookies();
   const localeCookie = cookieStore.get('NEXT_LOCALE');
@@ -23,15 +9,17 @@ export default async function GlobalNotFound() {
   const defaultLocale = process.env.NEXT_PUBLIC_DEFAULT_LOCALE || 'en';
   const supportedLocales = process.env.NEXT_PUBLIC_LOCALES?.split(',') || [
     'en',
-    'pl',
   ];
 
   // Get locale from cookie, default to the configured default locale
   const cookieValue = localeCookie?.value || defaultLocale;
-  const locale = (
-    supportedLocales.includes(cookieValue) ? cookieValue : defaultLocale
-  ) as 'en' | 'pl';
-  const t = messages[locale];
+  const locale = supportedLocales.includes(cookieValue)
+    ? cookieValue
+    : defaultLocale;
+
+  // Load translations from JSON files
+  const messages = (await import(`@/messages/${locale}.json`)).default;
+  const t = messages.notFound;
 
   return (
     <html lang={locale}>
