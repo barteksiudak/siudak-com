@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers';
-import styles from './not-found.module.css';
+import { NextIntlClientProvider } from 'next-intl';
+import NotFound from './[locale]/not-found';
 import './globals.css';
 
 export default async function GlobalNotFound() {
@@ -19,18 +20,13 @@ export default async function GlobalNotFound() {
 
   // Load translations from JSON files
   const messages = (await import(`@/messages/${locale}.json`)).default;
-  const t = messages.notFound;
 
   return (
     <html lang={locale}>
       <body>
-        <main className={styles.container}>
-          <h1 className={styles.title}>{t.title}</h1>
-          <p className={styles.message}>{t.message}</p>
-          <a href={`/${locale}`} className={styles.link}>
-            {t.backHome}
-          </a>
-        </main>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <NotFound />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
