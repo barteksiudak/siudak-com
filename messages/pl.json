@@ -1,0 +1,12 @@
+{
+  "header": {
+    "title": "Siudak.com"
+  },
+  "home": {
+    "greeting": "Witaj Świecie"
+  },
+  "language": {
+    "en": "Angielski",
+    "pl": "Polski"
+  }
+}

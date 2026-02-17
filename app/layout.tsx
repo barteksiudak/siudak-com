@@ -1,23 +1,9 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import { Header } from './components/header/header'
-
-export const metadata: Metadata = {
-  title: 'Siudak.com',
-  description: 'Welcome to siudak.com',
-}
-
+// Root layout - required by Next.js
+// Actual layout with html/body is in [locale]/layout.tsx
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <html lang="pl">
-      <body>
-        <Header />
-        {children}
-      </body>
-    </html>
-  )
+  return children
 }
