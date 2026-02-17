@@ -10,7 +10,6 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <h1 className={styles.title}>{t('title')}</h1>
       <LanguageSwitcher currentLocale={locale} />
     </header>
   );

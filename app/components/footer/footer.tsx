@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import styles from './footer.module.css';
+import stylesCommon from '../sections/common.module.css';
 
 export const Footer = () => {
   const t = useTranslations('footer');
@@ -13,7 +14,7 @@ export const Footer = () => {
           href="https://www.linkedin.com/in/bartosz-siudak-bb08a85a/"
           target="_blank"
           rel="noopener noreferrer"
-          className={styles.linkedinLink}
+          className={stylesCommon.linkedinLink}
         >
           <span>{t('contactLinkedIn')}</span>
           <Image
