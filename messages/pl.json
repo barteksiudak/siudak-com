@@ -17,5 +17,44 @@
   "hero": {
     "roles": "Architekt Systemów | Senior Software Developer | Przedsiębiorca",
     "description": "Łączę ponad 20 lat doświadczenia w IT z wizją biznesową. Buduję skalowalne rozwiązania webowe dla globalnych marek, startupów i organizacji non-profit. Pasjonuję się architekturą systemów, rozwojem oprogramowania i przedsiębiorczością."
+  },
+  "bio": {
+    "title": "Doświadczenie i kompetencje",
+    "description": "Jestem architektem oprogramowania i programistą specjalizującym się w nowoczesnych technologiach webowych. Moim głównym stosem technologicznym jest ekosystem React oraz TypeScript (głównie Next.js). Posiadam ponad 20-letnie doświadczenie w branży, zdobywane zarówno w dynamicznych środowiskach startupowych, jak i w strukturach wielkich korporacji. Realizowałem projekty dla takich gigantów jak Coca-Cola, Disney, Vodafone czy General Electric. Dzięki temu unikalnemu połączeniu potrafię dostarczać kod najwyższej jakości, rozumiejąc jednocześnie szerszy kontekst biznesowy i potrzeby rynku."
+  },
+  "founder": {
+    "title": "Founder & Architect - SelfExpo",
+    "description": "Jestem pomysłodawcą i głównym architektem systemu SelfExpo - innowacyjnej platformy B2B SaaS do zarządzania autonomicznymi showroomami ekspozycyjnymi.",
+    "keyFunctions": [
+      {
+        "title": "Autonomia 24/7",
+        "description": "System umożliwia bezobsługowy dostęp do showroomów za pomocą jednorazowych kodów QR generowanych na telefon."
+      },
+      {
+        "title": "Bezpieczeństwo i Monitoring",
+        "description": "Integracja z czujnikami, monitoringiem AI oraz automatyczne powiadomienia o zdarzeniach (np. utrata łączności, wykrycie obecności)."
+      },
+      {
+        "title": "Mobile First & Cloud",
+        "description": "Rozwiązanie oparte na chmurze AWS i Cloudflare, niewymagające instalacji aplikacji przez klienta końcowego."
+      },
+      {
+        "title": "Zarządzanie",
+        "description": "Rozbudowany panel administracyjny (SelfAdmin) do zarządzania rolami, dostępami i infrastrukturą showroomu."
+      }
+    ],
+    "link": "Link: Zobacz projekt na <link>https://selfexpo.eu</link>"
+  },
+  "technologies": {
+    "title": "Technologie",
+    "description": "Na co dzień stawiam na sprawdzony ekosystem oparty o React, Next.js i TypeScript, wspierany infrastrukturą AWS i Cloudflare. Mój warsztat obejmuje jednak znacznie szersze spektrum technologii frontendowych - od preprocesorów CSS (Sass/Less) i rozwiązań CSS-in-JS (Styled Components, Emotion), po zaawansowane zarządzanie stanem (Redux, Zustand) i testowanie (Jest, Cypress). Dobieram narzędzia pragmatycznie, dopasowując je do skali projektu i wymagań biznesowych, a nie chwilowej mody."
+  },
+  "interests": {
+    "title": "Zainteresowania",
+    "description": "Po godzinach pasjonuję się elektroniką i systemami Smart Home. Amatorsko projektuję i wdrażam rozwiązania automatyki domowej, stale śledząc najnowsze trendy w świecie IoT i hardware'u. To hobby pozwala mi lepiej rozumieć styk oprogramowania ze sprzętem, co wykorzystuję m.in. przy budowie SelfExpo."
+  },
+  "footer": {
+    "allRightsReserved": "Wszelkie prawa zastrzeżone",
+    "contactLinkedIn": "Napisz do mnie na LinkedIn"
   }
 }

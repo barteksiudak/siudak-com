@@ -1,0 +1,76 @@
+/* Mobile First Hero Section */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-md);
+  gap: var(--spacing-md);
+  max-width: 100%;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .container {
+    padding: var(--spacing-lg);
+    gap: var(--spacing-lg);
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+  .container {
+    padding: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.description {
+  text-align: justify;
+}
+
+/* Mobile First - Column layout */
+.halfContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.imageContainer {
+  align-self: center;
+  width: 90%;
+}
+
+.imageContainer img {
+  width: 90% !important;
+  height: auto !important;
+}
+
+.contentContainer {
+  text-align: justify;
+}
+
+/* Desktop - Row layout with order swap */
+@media (min-width: 1024px) {
+  .halfContainer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .imageContainer {
+    /* order: 2; */
+    width: 50%;
+  }
+
+  .imageContainer img {
+    width: auto !important;
+    height: auto !important;
+    min-width: 300px;
+  }
+
+  .contentContainer {
+    /* order: 1; */
+    width: 50%;
+  }
+}
