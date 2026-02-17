@@ -1,4 +1,6 @@
-import { cookies } from 'next/headers'
+import { cookies } from 'next/headers';
+import styles from './not-found.module.css';
+import './globals.css';
 
 // Translation messages
 const messages = {
@@ -12,30 +14,36 @@ const messages = {
     message: 'Przepraszamy, strona której szukasz nie istnieje.',
     backHome: 'Wróć do strony głównej',
   },
-}
+};
 
 export default async function GlobalNotFound() {
-  const cookieStore = await cookies()
-  const localeCookie = cookieStore.get('NEXT_LOCALE')
+  const cookieStore = await cookies();
+  const localeCookie = cookieStore.get('NEXT_LOCALE');
 
-  // Get locale from cookie, default to 'en'
-  const locale = (localeCookie?.value === 'pl' ? 'pl' : 'en') as 'en' | 'pl'
-  const t = messages[locale]
+  const defaultLocale = process.env.NEXT_PUBLIC_DEFAULT_LOCALE || 'en';
+  const supportedLocales = process.env.NEXT_PUBLIC_LOCALES?.split(',') || [
+    'en',
+    'pl',
+  ];
+
+  // Get locale from cookie, default to the configured default locale
+  const cookieValue = localeCookie?.value || defaultLocale;
+  const locale = (
+    supportedLocales.includes(cookieValue) ? cookieValue : defaultLocale
+  ) as 'en' | 'pl';
+  const t = messages[locale];
 
   return (
     <html lang={locale}>
       <body>
-        <main style={{ textAlign: 'center', padding: '2rem' }}>
-          <h1>{t.title}</h1>
-          <p>{t.message}</p>
-          <a
-            href={`/${locale}`}
-            style={{ color: '#0070f3', textDecoration: 'underline' }}
-          >
+        <main className={styles.container}>
+          <h1 className={styles.title}>{t.title}</h1>
+          <p className={styles.message}>{t.message}</p>
+          <a href={`/${locale}`} className={styles.link}>
             {t.backHome}
           </a>
         </main>
       </body>
     </html>
-  )
+  );
 }

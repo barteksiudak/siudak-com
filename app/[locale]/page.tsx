@@ -1,12 +1,12 @@
-import { getTranslations } from 'next-intl/server'
-import { Header } from '../components/header/header'
+import { getTranslations } from 'next-intl/server';
+import { Header } from '../components/header/header';
 
 export default async function Home({
   params: { locale },
 }: {
-  params: { locale: string }
+  params: { locale: string };
 }) {
-  const t = await getTranslations('home')
+  const t = await getTranslations('home');
 
   return (
     <>
@@ -15,5 +15,5 @@ export default async function Home({
         <h1>{t('greeting')}</h1>
       </main>
     </>
-  )
+  );
 }

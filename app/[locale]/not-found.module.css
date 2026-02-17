@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-xl);
+  gap: var(--spacing-md);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.message {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+}
+
+.link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-size: 1rem;
+  transition: opacity 0.2s ease;
+  margin-top: var(--spacing-md);
+}
+
+.link:hover {
+  opacity: 0.8;
+}

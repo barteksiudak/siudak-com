@@ -1,28 +1,23 @@
-'use client'
+'use client';
 
-import { useTranslations, useLocale } from 'next-intl'
-import { Link } from '@/i18n/routing'
-import { Header } from '../components/header/header'
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
+import { Header } from '../components/header/header';
+import styles from './not-found.module.css';
 
 export default function NotFound() {
-  const locale = useLocale()
-  const t = useTranslations('notFound')
-
-  console.log('NotFound - Current locale:', locale)
+  const t = useTranslations('notFound');
 
   return (
     <>
       <Header />
-      <main style={{ textAlign: 'center', padding: '2rem' }}>
-        <h1>{t('title')}</h1>
-        <p>{t('message')}</p>
-        <Link
-          href="/"
-          style={{ color: '#0070f3', textDecoration: 'underline' }}
-        >
+      <main className={styles.container}>
+        <h1 className={styles.title}>{t('title')}</h1>
+        <p className={styles.message}>{t('message')}</p>
+        <Link href="/" className={styles.link}>
           {t('backHome')}
         </Link>
       </main>
     </>
-  )
+  );
 }

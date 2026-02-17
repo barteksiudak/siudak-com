@@ -1,26 +1,26 @@
-'use client'
+'use client';
 
-import { useRouter, usePathname } from '@/i18n/routing'
-import { locales } from '@/i18n/routing'
-import styles from './language-switcher.module.css'
+import { useRouter, usePathname } from '@/i18n/routing';
+import { locales } from '@/i18n/routing';
+import styles from './language-switcher.module.css';
 
 interface LanguageSwitcherProps {
-  currentLocale: string
+  currentLocale: string;
 }
 
 export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
-  const router = useRouter()
-  const pathname = usePathname()
+  const router = useRouter();
+  const pathname = usePathname();
 
   const handleLocaleChange = (newLocale: string) => {
-    if (newLocale === currentLocale) return
+    if (newLocale === currentLocale) return;
 
     // Save locale to cookie (next-intl will use this automatically)
-    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`
+    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
 
     // Use next-intl's router for locale-aware navigation
-    router.replace(pathname, { locale: newLocale })
-  }
+    router.replace(pathname, { locale: newLocale });
+  };
 
   return (
     <div className={styles.switcher}>
@@ -35,5 +35,5 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
         </button>
       ))}
     </div>
-  )
+  );
 }
