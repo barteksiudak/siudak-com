@@ -1,4 +1,13 @@
 {
+  "metadata": {
+    "title": "Bartosz Siudak - Programmer and Entrepreneur",
+    "description": "Senior JavaScript Developer specializing in ReactJS, NextJS, ReactNative, NodeJS, and MongoDB. Working remotely in an international environment since 2009.",
+    "keywords": "Bartosz Siudak, programmer, JavaScript, ReactJS, NextJS, ReactNative, NodeJS, MongoDB, Senior Developer, TDD",
+    "ogTitle": "Bartosz Siudak - Programmer and Entrepreneur",
+    "ogDescription": "Senior JavaScript Developer specializing in ReactJS, NextJS, ReactNative, NodeJS, and MongoDB. Working remotely in an international environment since 2009.",
+    "twitterTitle": "Bartosz Siudak - Programmer and Entrepreneur",
+    "twitterDescription": "Senior JavaScript Developer specializing in ReactJS, NextJS, ReactNative, NodeJS, and MongoDB."
+  },
   "header": {
     "title": "Siudak.com"
   },

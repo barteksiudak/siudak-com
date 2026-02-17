@@ -1,4 +1,13 @@
 {
+  "metadata": {
+    "title": "Bartosz Siudak - Programista i Przedsiębiorca",
+    "description": "Senior JavaScript Developer specjalizujący się w ReactJS, NextJS, ReactNative, NodeJS i MongoDB. Pracuję zdalnie w środowisku międzynarodowym od 2009 roku.",
+    "keywords": "Bartosz Siudak, programista, JavaScript, ReactJS, NextJS, ReactNative, NodeJS, MongoDB, Senior Developer, TDD",
+    "ogTitle": "Bartosz Siudak - Programista i Przedsiębiorca",
+    "ogDescription": "Senior JavaScript Developer specjalizujący się w ReactJS, NextJS, ReactNative, NodeJS i MongoDB. Pracuję zdalnie w środowisku międzynarodowym od 2009 roku.",
+    "twitterTitle": "Bartosz Siudak - Programista i Przedsiębiorca",
+    "twitterDescription": "Senior JavaScript Developer specjalizujący się w ReactJS, NextJS, ReactNative, NodeJS i MongoDB."
+  },
   "header": {
     "title": "Siudak.com"
   },
