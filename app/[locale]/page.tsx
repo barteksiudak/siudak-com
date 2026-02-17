@@ -1,4 +1,4 @@
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
+import { getTranslations } from 'next-intl/server'
 import { Header } from '../components/header/header'
 
 export default async function Home({
@@ -6,7 +6,6 @@ export default async function Home({
 }: {
   params: { locale: string }
 }) {
-  unstable_setRequestLocale(locale)
   const t = await getTranslations('home')
 
   return (

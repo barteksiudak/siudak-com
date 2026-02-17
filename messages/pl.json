@@ -8,5 +8,10 @@
   "language": {
     "en": "Angielski",
     "pl": "Polski"
+  },
+  "notFound": {
+    "title": "404 - Strona nie znaleziona",
+    "message": "Przepraszamy, strona której szukasz nie istnieje.",
+    "backHome": "Wróć do strony głównej"
   }
 }

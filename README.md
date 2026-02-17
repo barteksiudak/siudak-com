@@ -1,6 +1,6 @@
 # siudak.com
 
-Next.js project configured for Static Site Generation (SSG).
+Next.js project configured for Server-Side Rendering (SSR).
 
 ## Getting Started
 
@@ -18,22 +18,23 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Build for Production (SSG)
+### Build for Production (SSR)
 
 ```bash
 npm run build
+npm run start
 ```
 
-- Then directory ./out with all static files will be creted
-- To test static files use: `npx serve@latest out`
+The production server will start on [http://localhost:3000](http://localhost:3000).
 
-### SSG Configuration
+### SSR Configuration
 
-The project is configured for static site generation through:
+The project is configured for server-side rendering:
 
-- `output: 'export'` in [next.config.js](next.config.js)
-- All pages are rendered during build time
-- Static files are output to the `out/` folder
+- Middleware handles automatic language detection and redirects
+- Pages are rendered on each request
+- Locale detection via cookies and `Accept-Language` header
+- SEO-friendly server-side redirects
 
 ## Project Structure
 
@@ -56,7 +57,8 @@ The project is configured for static site generation through:
 ├── messages/              # Translation files
 │   ├── en.json           # English translations
 │   └── pl.json           # Polish translations
-├── next.config.js         # Next.js configuration (SSG)
+├── middleware.ts          # Next.js middleware (locale detection)
+├── next.config.js         # Next.js configuration (SSR)
 ├── tsconfig.json          # TypeScript configuration
 └── package.json           # Project dependencies
 ```
@@ -67,7 +69,7 @@ The project is configured for static site generation through:
 - React 18
 - TypeScript
 - next-intl (internationalization)
-- SSG (Static Site Generation)
+- SSR (Server-Side Rendering)
 - Prettier (code formatting)
 
 ## Internationalization
@@ -76,14 +78,28 @@ The project supports multiple languages (English and Polish) using `next-intl`:
 
 - Translation files are located in the `messages/` folder
 - Language switcher is available in the header
-- Static pages are generated for all locales during build
-- Routes: `/` (default: English), `/pl` (Polish)
+- Automatic language detection via middleware:
+  1. Checks cookie (`NEXT_LOCALE`)
+  2. Falls back to browser's `Accept-Language` header
+  3. Saves detected language to cookie for future visits
+- Routes: `/` (auto-redirect), `/en` (English), `/pl` (Polish)
+
+### How Language Detection Works
+
+When a user visits `/`:
+
+1. **Middleware checks cookie**: If `NEXT_LOCALE` cookie exists, redirects to that locale
+2. **Browser language detection**: If no cookie, reads `Accept-Language` header
+3. **Sets cookie and redirects**: Saves detected locale and redirects to `/en` or `/pl`
+
+This approach is **SEO-friendly** as redirects happen server-side.
 
 To add a new language:
 
 1. Create a new JSON file in `messages/` (e.g., `de.json`)
 2. Add the locale to `i18n/routing.ts` in the `locales` array
-3. Rebuild the project
+3. Update `SUPPORTED_LOCALES` in `middleware.ts`
+4. Restart the server
 
 ## Design System
 

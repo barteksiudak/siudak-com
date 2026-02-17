@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter, usePathname } from 'next/navigation'
+import { useRouter, usePathname } from '@/i18n/routing'
 import { locales } from '@/i18n/routing'
 import styles from './language-switcher.module.css'
 
@@ -15,11 +15,11 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
   const handleLocaleChange = (newLocale: string) => {
     if (newLocale === currentLocale) return
 
-    const segments = pathname.split('/')
-    segments[1] = newLocale
-    const newPath = segments.join('/')
+    // Save locale to cookie (next-intl will use this automatically)
+    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`
 
-    router.push(newPath || `/${newLocale}`)
+    // Use next-intl's router for locale-aware navigation
+    router.replace(pathname, { locale: newLocale })
   }
 
   return (
