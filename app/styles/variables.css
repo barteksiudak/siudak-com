@@ -1,13 +1,14 @@
 :root {
   /* Colors */
-  --color-primary: #0070f3;
-  --color-secondary: #7928ca;
+  --color-primary: #428af9;
+  --color-secondary: #ecf3f8;
   --color-background: #ffffff;
-  --color-background-secondary: #f5f5f5;
+  --color-background-secondary: #ecf3f8;
   --color-text: #000000;
-  --color-text-secondary: #666666;
+  --color-text-secondary: #3d6fa1;
+  --color-border-primary: #e5ecf3;
 
-  /* Spacing */
+  /* Spacing - Mobile First */
   --spacing-xs: 0.25rem; /* 4px */
   --spacing-sm: 0.5rem; /* 8px */
   --spacing-md: 1rem; /* 16px */
@@ -24,4 +25,18 @@
   --font-family:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+  /* Font sizes - Mobile First */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-2xl: 2rem; /* 32px */
+  --font-size-3xl: 2.5rem; /* 40px */
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
 }

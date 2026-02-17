@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { Header } from '../components/header/header';
+import Hero from '../components/sections/hero';
 
 export default async function Home({
   params: { locale },
@@ -12,7 +13,7 @@ export default async function Home({
     <>
       <Header />
       <main>
-        <h1>{t('greeting')}</h1>
+        <Hero />
       </main>
     </>
   );

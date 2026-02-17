@@ -13,5 +13,9 @@
     "title": "404 - Strona nie znaleziona",
     "message": "Przepraszamy, strona której szukasz nie istnieje.",
     "backHome": "Wróć do strony głównej"
+  },
+  "hero": {
+    "roles": "Architekt Systemów | Senior Software Developer | Przedsiębiorca",
+    "description": "Łączę ponad 20 lat doświadczenia w IT z wizją biznesową. Buduję skalowalne rozwiązania webowe dla globalnych marek, startupów i organizacji non-profit. Pasjonuję się architekturą systemów, rozwojem oprogramowania i przedsiębiorczością."
   }
 }

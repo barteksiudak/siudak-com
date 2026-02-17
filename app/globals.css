@@ -1,9 +1,16 @@
 @import './styles/variables.css';
 
+/* Mobile-first reset */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html,
@@ -14,10 +21,12 @@ body {
 
 body {
   font-family: var(--font-family);
+  font-size: var(--font-size-base);
   background-color: var(--color-background);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 
 main {
@@ -25,9 +34,34 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: var(--spacing-md);
 }
 
+/* Typography - Mobile First */
 h1 {
-  font-size: 3rem;
+  font-size: var(--font-size-2xl);
   font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  main {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  main {
+    padding: var(--spacing-xl);
+  }
 }

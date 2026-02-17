@@ -1,13 +1,28 @@
+/* Mobile First Header */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   background-color: var(--color-background-secondary);
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: var(--font-size-lg);
   font-weight: 600;
   margin: 0;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .header {
+    padding: var(--spacing-lg);
+    flex-wrap: nowrap;
+  }
+
+  .title {
+    font-size: var(--font-size-xl);
+  }
 }

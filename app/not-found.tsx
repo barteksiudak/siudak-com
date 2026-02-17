@@ -23,6 +23,13 @@ export default async function GlobalNotFound() {
 
   return (
     <html lang={locale}>
+      <head>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=5"
+        />
+      </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <NotFound />

@@ -1,31 +1,57 @@
+/* Mobile First 404 Page */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: var(--spacing-xl);
+  padding: var(--spacing-md);
   gap: var(--spacing-md);
+  max-width: 100%;
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: var(--font-size-2xl);
   font-weight: 600;
   color: var(--color-text);
+  word-break: break-word;
 }
 
 .message {
-  font-size: 1.125rem;
+  font-size: var(--font-size-base);
   color: var(--color-text-secondary);
+  max-width: 90%;
 }
 
 .link {
   color: var(--color-primary);
   text-decoration: underline;
-  font-size: 1rem;
+  font-size: var(--font-size-base);
   transition: opacity 0.2s ease;
   margin-top: var(--spacing-md);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm);
 }
 
 .link:hover {
   opacity: 0.8;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .container {
+    padding: var(--spacing-xl);
+    gap: var(--spacing-lg);
+  }
+
+  .title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .message {
+    font-size: var(--font-size-lg);
+    max-width: 600px;
+  }
 }
