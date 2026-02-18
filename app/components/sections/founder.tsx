@@ -91,7 +91,7 @@ export default function Founder() {
             ))}
           </motion.ul>
           <br />
-          <motion.h3 variants={itemVariants}>
+          <motion.h3 variants={itemVariants} className={styleCommon.left}>
             {t.rich('link', {
               link: (chunks) => (
                 <a

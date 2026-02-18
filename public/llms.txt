@@ -1,0 +1,238 @@
+# siudak.com
+
+> Personal website and portfolio of Bartosz Siudak - System Architect, Senior Software Developer, and Entrepreneur
+
+## Overview
+
+This is a server-side rendered Next.js website showcasing the professional experience and projects of Bartosz Siudak, a senior software developer with over 20 years of IT experience. The site highlights his expertise in modern web technologies, particularly the React ecosystem, and features his main entrepreneurial venture, SelfExpo.
+
+## Technology Stack
+
+### Core Framework
+- **Next.js 14** - React framework with SSR (Server-Side Rendering)
+- **React 18** - UI library
+- **TypeScript** - Type-safe development
+- **next-intl 3.9.0** - Internationalization library
+
+### Key Features
+- Server-Side Rendering (SSR) with standalone output
+- Internationalization (English and Polish)
+- Automatic language detection via middleware
+- Docker containerization
+- Performance optimizations (lazy loading, code splitting)
+- Security headers (CSP, X-Frame-Options, etc.)
+- Image optimization with WebP format
+- Motion animations (motion library v12)
+
+### Development Tools
+- ESLint - Code linting
+- Prettier - Code formatting
+- TypeScript 5.4.5 - Type checking
+
+## Project Structure
+
+```
+app/
+  [locale]/              # Internationalized routes (en, pl)
+    layout.tsx          # Locale-specific layout
+    page.tsx            # Home page with all sections
+    not-found.tsx       # 404 error page
+  components/
+    header/             # Site header with navigation
+    footer/             # Footer with contact info
+    language-switcher/  # Language toggle component
+    sections/           # Main content sections
+      hero.tsx          # Introduction section
+      bio.tsx           # Experience and competence
+      founder.tsx       # SelfExpo project showcase
+      technologies.tsx  # Technology stack
+      interests.tsx     # Personal interests
+  styles/
+    variables.css       # Design system variables
+  globals.css           # Global styles
+  layout.tsx            # Root layout
+  sitemap.ts            # Dynamic sitemap generation
+  robots.ts             # Robots.txt generation
+
+i18n/
+  request.ts            # i18n request configuration
+  routing.ts            # Route configuration
+
+messages/
+  en.json               # English translations
+  pl.json               # Polish translations
+
+middleware.ts           # Language detection middleware
+next.config.js          # Next.js configuration
+docker-compose.yml      # Docker orchestration
+Dockerfile              # Container definition
+```
+
+## Key Sections
+
+### Hero Section
+Introduces Bartosz Siudak with his main roles:
+- System Architect
+- Senior Software Developer
+- Entrepreneur
+
+Highlights 20+ years of IT experience building scalable web solutions for global brands, startups, and non-profit organizations.
+
+### Bio Section
+Details professional experience and competence:
+- Specialization in React ecosystem and TypeScript (mainly Next.js)
+- 20+ years industry experience
+- Work with major brands: Coca-Cola, Disney, Vodafone, General Electric
+- Combination of high-quality code delivery and business context understanding
+
+### Founder Section (SelfExpo)
+Showcases the main entrepreneurial project - SelfExpo:
+- **Platform**: B2B SaaS for managing autonomous showrooms
+- **Key Features**:
+  - 24/7 Autonomy: Unattended access via one-time QR codes
+  - Security & Monitoring: AI monitoring with automatic event notifications
+  - Mobile First & Cloud: AWS and Cloudflare infrastructure, no app installation
+  - Management: Advanced admin panel (SelfAdmin) for roles and access control
+- **URL**: https://selfexpo.eu
+
+### Technologies Section
+Technical expertise overview:
+- Primary stack: React, Next.js, TypeScript
+- Infrastructure: AWS, Cloudflare
+- CSS: Sass/Less, Styled Components, Emotion
+- State management: Redux, Zustand
+- Testing: Jest, Cypress
+- Pragmatic tool selection based on project needs
+
+### Interests Section
+Personal interests and hobbies:
+- Electronics and Smart Home systems
+- Amateur home automation design and implementation
+- IoT and hardware trends
+- Integration of software and hardware knowledge into SelfExpo development
+
+## Internationalization (i18n)
+
+The site supports two languages:
+- **English** (en) - Default language
+- **Polish** (pl) - Secondary language
+
+### Language Detection Flow
+1. Check `NEXT_LOCALE` cookie
+2. If no cookie, read browser's `Accept-Language` header
+3. Set cookie and redirect to appropriate locale (`/en` or `/pl`)
+
+### Routes
+- `/` - Auto-redirects based on language detection
+- `/en` - English version
+- `/pl` - Polish version
+
+## Deployment
+
+### Development
+```bash
+npm install
+npm run dev
+# Runs on http://localhost:3000
+```
+
+### Production (Docker)
+```bash
+docker-compose up --build -d
+```
+
+### Production (Manual)
+```bash
+npm run build
+npm run start
+```
+
+**Auto-generated during build**:
+- `/sitemap.xml` - Dynamic sitemap with all language variants and hreflang tags
+- `/robots.txt` - Search engine crawling directives with sitemap reference
+
+## Performance Optimizations
+
+- **Lazy Loading**: Below-the-fold components loaded dynamically
+- **Code Splitting**: Automatic with Next.js
+- **Image Optimization**: WebP format, responsive sizes
+- **SWC Minification**: Fast JavaScript bundling
+- **Package Optimization**: Motion library optimized imports
+- **Caching**: Long-term caching for static assets (31536000s)
+- **Content Security Policy**: Strict CSP headers
+- **Console Removal**: Automatic in production builds
+
+## Security Features
+
+- X-Frame-Options: SAMEORIGIN
+- X-Content-Type-Options: nosniff
+- Content Security Policy (CSP)
+- Referrer Policy: origin-when-cross-origin
+- X-DNS-Prefetch-Control enabled
+- Powered-by header removed
+
+## SEO & Metadata
+
+### Sitemap & Robots
+- **Sitemap**: Auto-generated at `/sitemap.xml` with multilingual support and hreflang tags
+- **Robots.txt**: Auto-generated at `/robots.txt` with sitemap reference
+- **URLs Indexed**: `/en`, `/pl` (both with priority and changefreq)
+
+### English Metadata
+- **Title**: Bartosz Siudak - Programmer and Entrepreneur
+- **Description**: Senior JavaScript Developer specializing in ReactJS, NextJS, ReactNative, NodeJS, and MongoDB. Working remotely in an international environment since 2009.
+- **Keywords**: Bartosz Siudak, programmer, JavaScript, ReactJS, NextJS, ReactNative, NodeJS, MongoDB, Senior Developer, TDD
+
+### Polish Metadata
+- **Title**: Bartosz Siudak - Programista i Przedsiębiorca
+- **Description**: Senior JavaScript Developer specjalizujący się w ReactJS, NextJS, ReactNative, NodeJS i MongoDB. Pracuję zdalnie w środowisku międzynarodowym od 2009 roku.
+- **Keywords**: Bartosz Siudak, programista, JavaScript, ReactJS, NextJS, ReactNative, NodeJS, MongoDB, Senior Developer, TDD
+
+## Architecture Decisions
+
+### SSR vs Static
+- **Choice**: Server-Side Rendering (SSR)
+- **Reason**: Dynamic language detection, real-time content updates, SEO benefits
+- **Output**: Standalone mode for Docker deployment
+
+### Component Organization
+- Modular component structure with dedicated folders
+- Co-located styles using CSS modules (.module.css)
+- Dynamic imports for performance optimization
+- Separation of concerns: layout, sections, and shared components
+
+### Styling Approach
+- CSS Modules for component-scoped styles
+- Global CSS for variables and base styles
+- Design system via CSS custom properties in variables.css
+
+## Contact Information
+
+- **LinkedIn**: Available in footer
+- **Website**: siudak.com
+- **Project**: https://selfexpo.eu
+
+## Development Guidelines
+
+- **Code Formatting**: Prettier enforced
+- **React Mode**: Strict mode enabled
+- **Type Safety**: Full TypeScript coverage
+- **Testing**: Available tools - Jest, Cypress (configured in tech stack)
+- **Linting**: ESLint with Next.js config
+
+## Target Audience
+
+The website targets:
+- Potential clients looking for senior React/Next.js developers
+- Companies seeking system architects
+- Businesses interested in SelfExpo platform
+- Recruiters in the tech industry
+- Collaborators and partners
+
+## Business Context
+
+Bartosz Siudak positions himself at the intersection of:
+- **Technical Expertise**: 20+ years of hands-on development
+- **Business Acumen**: Understanding of market needs and business context
+- **Entrepreneurship**: Active development of SelfExpo B2B SaaS
+- **Global Experience**: Work with international brands and remote collaboration since 2009

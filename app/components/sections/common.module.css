@@ -26,6 +26,13 @@
   }
 }
 
+.left {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  gap: var(--spacing-sm);
+}
+
 .description {
   text-align: justify;
 }

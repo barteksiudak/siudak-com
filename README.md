@@ -20,6 +20,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Build for Production (SSR)
 
+```
+docker-compose up --build -d
+```
+
+To run it withou docker:
+
 ```bash
 npm run build
 npm run start
